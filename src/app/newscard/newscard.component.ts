@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NewsapiService } from '../newsapi.service';
 import { response } from '../newsresponse';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-newscard',
@@ -9,12 +11,16 @@ import { response } from '../newsresponse';
 })
 export class NewscardComponent implements OnInit {
 
-  @Input() category : string="Sports";
+  // category : string;
   resp: response;
-  constructor(private newsservice: NewsapiService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private newsservice: NewsapiService) { }
 
   ngOnInit() {
-    this.newsservice.getNewsHeadline(this.category).subscribe(rep =>
+    const category = this.route.snapshot.paramMap.get('category');
+    console.log(category);
+    this.newsservice.getNewsHeadline(category).subscribe(rep =>
       this.resp=rep);
   }
 }

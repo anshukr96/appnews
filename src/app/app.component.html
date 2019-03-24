@@ -1,13 +1,8 @@
 <h2>NewsApp</h2>
 <div class="header">
 
-  <span class="tab" (click)="getcategory('Home')">Home</span>
-  <span class="tab" (click)="getcategory('Bussiness')">Bussiness</span>
-  <span class="tab" (click)="getcategory('Entertainment')">Entertainment</span>
-  <span class="tab" (click)="getcategory('Health')">Health</span>
-  <span class="tab" (click)="getcategory('Science')">Science</span>
-  <span class="tab" (click)="getcategory('Sports')">Sports</span>
-  <span class="tab" (click)="getcategory('Technology')">Technology</span>
+  <span routerLink='/details/{{category}}' *ngFor='let category of categories' class="tab">{{category}}</span>
   
 </div>
-<app-newscard [category]="genre"></app-newscard>
+<!-- <app-newscard [category]="genre"></app-newscard> -->
+<router-outlet></router-outlet>

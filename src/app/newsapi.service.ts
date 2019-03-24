@@ -9,16 +9,17 @@ const httpOptions = {
 
 const news_api_url = 'https://newsapi.org/v2/top-headlines';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NewsapiService {
 
   constructor(private http: HttpClient) {}
 
   getNewsHeadline(category:string):Observable<response>{
-
+    
     let categoryUrl=news_api_url+"?country=in&category="+category;
+    if(category=='Home'){
+      categoryUrl=news_api_url+"?country=in";
+    }
     return this.http.get<response>(categoryUrl,httpOptions);
   }
 }

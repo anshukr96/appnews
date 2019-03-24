@@ -7,3 +7,9 @@ h2 {
     justify-content: space-evenly;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.tab:hover{
+    color: blue;
+    /* font-size: 5%; */
+    cursor: pointer;
+  }
