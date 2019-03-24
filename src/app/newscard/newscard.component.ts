@@ -9,13 +9,12 @@ import { response } from '../newsresponse';
 })
 export class NewscardComponent implements OnInit {
 
-  @Input() category : string="Home";
+  @Input() category : string="Sports";
   resp: response;
   constructor(private newsservice: NewsapiService) { }
 
   ngOnInit() {
-    this.newsservice.getNewsHeadline(this.category).subscribe((rep) =>{
-      this.resp=rep;
-    })
+    this.newsservice.getNewsHeadline(this.category).subscribe(rep =>
+      this.resp=rep);
   }
 }

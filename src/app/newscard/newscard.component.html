@@ -1,4 +1,5 @@
-<div *ngIf='rep' >
+<div *ngIf='resp' >
+  
   <div *ngFor='let article of resp.articles' class='newscard'>
     <img [src]='article.urlToImage'/>
     <a [href]="article.url" target="blank"><h2>{{article.title}}</h2></a>

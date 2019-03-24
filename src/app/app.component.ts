@@ -7,10 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'newsblog';
-  genre: string;
+  genre: string='sports';
 
   getcategory(category: string){
     this.genre = category;
+    console.log(this.genre);
   }
 
 }
